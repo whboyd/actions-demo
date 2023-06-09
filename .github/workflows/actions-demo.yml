@@ -18,3 +18,4 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: echo "🔎 Environment var is ${{ vars.STUFF }}."
+      - run: echo "🔎 Secret is ${{ secrets.SUPER }}."
