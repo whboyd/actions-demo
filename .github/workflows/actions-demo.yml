@@ -21,3 +21,4 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: echo "🔎 Environment var is ${{ vars.STUFF }}."
       - run: echo "🔎 Secret is ${{ secrets.SUPER }}."
+      - run: echo "🔎 Let's test var precedence, the value is ${{ vars.HELLO }}."
