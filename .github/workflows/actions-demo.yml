@@ -5,12 +5,9 @@ on:
     branches: [main, ci-dev]
   workflow_dispatch: {}
 jobs:
-  Prevent-Manual-Runs-on-main:
-    runs-on: ubuntu-latest
-    steps:
-    - run: echo " Event name ${{ github.event_name }}"
-    - run: echo " Event type ${{ github.event_type }}"
   Explore-GitHub-Actions:
+    if: ${{ github.ref_name }} != 'main' || ${{ github.event_name }} != 'workflow_dispatch'
+    needs: [Prevent-Manual-Runs-on-main]
     environment: ${{ github.ref_name }}
     runs-on: ubuntu-latest
     steps:
