@@ -7,7 +7,6 @@ on:
 jobs:
   Explore-GitHub-Actions:
     if: ${{ github.ref_name }} != 'main' || ${{ github.event_name }} != 'workflow_dispatch'
-    needs: [Prevent-Manual-Runs-on-main]
     environment: ${{ github.ref_name }}
     runs-on: ubuntu-latest
     steps:
