@@ -8,8 +8,11 @@ jobs:
      - name: Saving RegScale tar file and pushing to Azure Blob
        run: |
          echo Saving tar file and pushing to Azure Blob
-         echo Saving regscale/regscale:1.10.0
-         docker pull regscale/regscale:1.10.0
-         docker save -o regscale.tar regscale/regscale:1.10.0
+         echo Saving regscale/regscale:5.10.0
+         echo Pulling...
+         docker pull regscale/regscale:5.10.0
+         echo Saving...
+         docker save -o regscale.tar regscale/regscale:5.10.0
+         echo Zipping...
          gzip regscale.tar
          ls *.gz
