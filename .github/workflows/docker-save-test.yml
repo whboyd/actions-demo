@@ -6,10 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: Saving RegScale tar file and pushing to Azure Blob
-      run: |
-        echo Saving tar file and pushing to Azure Blob
-        echo Saving regscale/regscale:1.10.0
-        docker pull regscale/regscale:1.10.0
-        docker save -o regscale.tar regscale/regscale:1.10.0
-        gzip regscale.tar
-        ls *.gz
+       run: |
+         echo Saving tar file and pushing to Azure Blob
+         echo Saving regscale/regscale:1.10.0
+         docker pull regscale/regscale:1.10.0
+         docker save -o regscale.tar regscale/regscale:1.10.0
+         gzip regscale.tar
+         ls *.gz
